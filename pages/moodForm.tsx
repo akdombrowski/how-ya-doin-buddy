@@ -15,7 +15,7 @@ export default function MoodForm() {
   } = useForm();
 
   function onSubmit(values) {
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       setTimeout(() => {
         alert(JSON.stringify(values, null, 2));
         resolve();
