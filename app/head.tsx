@@ -2,7 +2,7 @@ import React from "react";
 import DefaultTags from "./DefaultTags";
 
 export default function Head({
-  params = { slug: "" },
+  params = { slug: "slug" },
 }: {
   params: { slug: string };
 }) {
