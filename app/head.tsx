@@ -1,11 +1,7 @@
-import React from "react";
+// import React from "react";
 import DefaultTags from "./DefaultTags";
 
-export default function Head({
-  params = { slug: "slug" },
-}: {
-  params: { slug: string };
-}) {
+export default function Head({ params }: { params: { slug: string } }) {
   return (
     <>
       <title>My Page</title>
