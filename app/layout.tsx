@@ -8,7 +8,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
     <Html>
-      <Head>
+      <Head params={{
+        slug: "slug"
+      }}>
 
       </Head>
       <body>
