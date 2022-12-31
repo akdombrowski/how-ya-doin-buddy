@@ -13,7 +13,6 @@ export default function RootLayout({
       <body>
         {/* Color Mode Script */}
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        <Mood />
         <NextScript />
       </body>
     </Html>
