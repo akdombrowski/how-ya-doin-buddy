@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSession, signIn, signOut } from "next-auth/react";
+import HomeNotSignedIn from "../src/components/HomeNotSignedIn";
 
 const IndexPage = () => {
   const { data: session } = useSession();
@@ -78,6 +79,7 @@ const IndexPage = () => {
     <>
       Not signed in <br />
       <button onClick={() => signIn()}>Sign in</button>
+      <HomeNotSignedIn></HomeNotSignedIn>
     </>
   );
   // return (
