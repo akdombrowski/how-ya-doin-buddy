@@ -10,6 +10,7 @@ import { Stack } from "@mui/system";
 
 const IndexPage = () => {
   const { data: session } = useSession();
+
   const {
     control,
     register,
@@ -37,7 +38,7 @@ const IndexPage = () => {
                   <Controller
                     name="mood"
                     control={control}
-                    defaultValue={[1, 10]}
+                    defaultValue={5}
                     render={({ field }) => (
                       <Slider
                         {...field}
@@ -45,6 +46,7 @@ const IndexPage = () => {
                           field.onChange(value);
                         }}
                         valueLabelDisplay="auto"
+                        marks
                         max={10}
                         min={1}
                         step={1}
@@ -60,7 +62,7 @@ const IndexPage = () => {
                   <Controller
                     name="motivation"
                     control={control}
-                    defaultValue={[1, 10]}
+                    defaultValue={5}
                     render={({ field }) => (
                       <Slider
                         {...field}
@@ -68,6 +70,55 @@ const IndexPage = () => {
                           field.onChange(value);
                         }}
                         valueLabelDisplay="auto"
+                        marks
+                        max={10}
+                        min={1}
+                        step={1}
+                      />
+                    )}
+                  />
+                </Grid>
+              </Grid>
+
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <label>Feelin like a social butterfly?</label>
+                  <Controller
+                    name="social"
+                    control={control}
+                    defaultValue={5}
+                    render={({ field }) => (
+                      <Slider
+                        {...field}
+                        onChange={(_, value) => {
+                          field.onChange(value);
+                        }}
+                        valueLabelDisplay="auto"
+                        marks
+                        max={10}
+                        min={1}
+                        step={1}
+                      />
+                    )}
+                  />
+                </Grid>
+              </Grid>
+
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <label>People pissing you off?</label>
+                  <Controller
+                    name="anger"
+                    control={control}
+                    defaultValue={5}
+                    render={({ field }) => (
+                      <Slider
+                        {...field}
+                        onChange={(_, value) => {
+                          field.onChange(value);
+                        }}
+                        valueLabelDisplay="auto"
+                        marks
                         max={10}
                         min={1}
                         step={1}
