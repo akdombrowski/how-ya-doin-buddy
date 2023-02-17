@@ -130,58 +130,24 @@ const IndexPage = () => {
 
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <input
-                    type="text"
-                    placeholder="Email"
-                    {...register("Email", {
-                      required: true,
-                      pattern: /^\S+@\S+$/i,
-                    })}
-                  />
-                </Grid>
-              </Grid>
-
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <input
-                    type="tel"
-                    placeholder="Mobile number"
-                    {...register("Mobile number", {
-                      required: true,
-                      minLength: 6,
-                      maxLength: 12,
-                    })}
-                  />
-                </Grid>
-              </Grid>
-
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <select {...register("Title", { required: true })}>
-                    <option value="Mr">Mr</option>
-                    <option value="Mrs">Mrs</option>
-                    <option value="Miss">Miss</option>
-                    <option value="Dr">Dr</option>
-                  </select>
-                </Grid>
-              </Grid>
-
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <input
-                    {...register("Developer", { required: true })}
-                    type="radio"
-                    value="Yes"
-                  />
-                </Grid>
-              </Grid>
-
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <input
-                    {...register("Developer", { required: true })}
-                    type="radio"
-                    value="No"
+                  <label>U pissin other people off?</label>
+                  <Controller
+                    name="annoying"
+                    control={control}
+                    defaultValue={5}
+                    render={({ field }) => (
+                      <Slider
+                        {...field}
+                        onChange={(_, value) => {
+                          field.onChange(value);
+                        }}
+                        valueLabelDisplay="auto"
+                        marks
+                        max={10}
+                        min={1}
+                        step={1}
+                      />
+                    )}
                   />
                 </Grid>
               </Grid>
