@@ -25,7 +25,7 @@ const IndexPage = () => {
       <Container maxWidth="xs">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            Signed in as {session.user.email} <br />
+            Signed in as {session.user?.email} <br />
           </Grid>
         </Grid>
 
