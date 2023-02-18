@@ -18,7 +18,8 @@ const IndexPage = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
+  errors ? console.log(errors) : console.log();
+  ;
 
   if (session) {
     return (
