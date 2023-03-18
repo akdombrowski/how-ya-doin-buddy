@@ -1,5 +1,5 @@
 import { Roboto } from "@next/font/google";
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 
 export const roboto = Roboto({
@@ -10,9 +10,9 @@ export const roboto = Roboto({
 });
 
 // Create a theme instance.
-const theme = createTheme({
+let theme = createTheme({
   palette: {
-    type: "dark",
+    mode: "dark",
     primary: {
       main: "#002147",
     },
@@ -27,6 +27,24 @@ const theme = createTheme({
       main: "#721817",
     },
   },
+  typography: {
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+    body1: { fontSize: "1.5rem" },
+    body2: { fontSize: "1.25rem" },
+  },
 });
+
+theme = responsiveFontSizes(theme);
 
 export default theme;
