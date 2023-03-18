@@ -28,7 +28,7 @@ const IndexPage = () => {
     return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Container maxWidth="xs" className="h-100">
+        <Container maxWidth="md" sx={{ height: "100vh" }}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               Signed in as {session.user?.email} <br />
@@ -52,10 +52,30 @@ const IndexPage = () => {
                         field.onChange(value);
                       }}
                       valueLabelDisplay="auto"
-                      marks
+                      marks={[
+                        { value: 0, label: "shit" },
+                        { value: 5, label: " meh" },
+                        { value: 10, label: "great" },
+                      ]}
                       max={10}
-                      min={1}
+                      min={0}
                       step={1}
+                      sx={{
+                        paddingTop: "3rem",
+                        "& .MuiSlider-markLabel": {
+                          paddingTop: "2rem",
+                        },
+                        "& .MuiSlider-rail": {
+                          height: "2rem",
+                        },
+                        "& .MuiSlider-track": {
+                          height: "2rem",
+                        },
+                        "& .MuiSlider-thumb": {
+                          height: "3rem",
+                          width: "3rem",
+                        },
+                      }}
                     />
                   )}
                 />
@@ -78,7 +98,7 @@ const IndexPage = () => {
                       valueLabelDisplay="auto"
                       marks
                       max={10}
-                      min={1}
+                      min={0}
                       step={1}
                     />
                   )}
@@ -104,7 +124,7 @@ const IndexPage = () => {
                       valueLabelDisplay="auto"
                       marks
                       max={10}
-                      min={1}
+                      min={0}
                       step={1}
                     />
                   )}
@@ -128,7 +148,7 @@ const IndexPage = () => {
                       valueLabelDisplay="auto"
                       marks
                       max={10}
-                      min={1}
+                      min={0}
                       step={1}
                     />
                   )}
@@ -154,7 +174,7 @@ const IndexPage = () => {
                       valueLabelDisplay="auto"
                       marks
                       max={10}
-                      min={1}
+                      min={0}
                       step={1}
                     />
                   )}
