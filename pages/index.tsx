@@ -6,12 +6,12 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Input from "@mui/material/Input";
 import Slider from "@mui/material/Slider";
-import { Stack } from "@mui/system";
+import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { ThemeProvider } from "@emotion/react";
 import theme from "../src/theme";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 
 const IndexPage = () => {
   const { data: session } = useSession();
@@ -22,8 +22,9 @@ const IndexPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
   errors ? console.log(errors) : console.log();
+
   if (session) {
     return (
       <ThemeProvider theme={theme}>
@@ -35,10 +36,10 @@ const IndexPage = () => {
             </Grid>
           </Grid>
 
-          <form id="form" onSubmit={handleSubmit(onSubmit)}>
+          <form id="form" action="/api/submitData" method="post">
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <label>
+                <label htmlFor="mood">
                   <Typography variant="h1">How ya doin, buddy?</Typography>
                 </label>
                 <Controller
@@ -82,7 +83,7 @@ const IndexPage = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <label>
+                <label htmlFor="motivation">
                   <Typography variant="h3">Are ya gettin shit done?</Typography>
                 </label>
                 <Controller
@@ -106,7 +107,7 @@ const IndexPage = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <label>
+                <label htmlFor="social">
                   <Typography variant="h3">
                     Feelin like a social butterfly?
                   </Typography>
@@ -132,7 +133,7 @@ const IndexPage = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <label>
+                <label htmlFor="anger">
                   <Typography variant="h3">People pissing you off?</Typography>
                 </label>
                 <Controller
@@ -156,7 +157,7 @@ const IndexPage = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <label>
+                <label htmlFor="annoying">
                   <Typography variant="h3">
                     U pissin other people off?
                   </Typography>

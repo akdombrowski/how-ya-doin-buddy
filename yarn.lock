@@ -601,12 +601,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xata.io/client@npm:^0.22.1":
-  version: 0.22.1
-  resolution: "@xata.io/client@npm:0.22.1"
+"@xata.io/client@npm:^0.23.3":
+  version: 0.23.3
+  resolution: "@xata.io/client@npm:0.23.3"
   peerDependencies:
     typescript: ">=4.5"
-  checksum: 0ad6f48f31772872d4f2352c3ee2c90cbdccbafa7215813f3ba340e86d768486ae483f0a8f22fc9e7b9b42f15db3c9e3d6d82f9a05bc626fdd2b775db0fca312
+  checksum: 32d449284e86f873d461b892bfffc0a0c4a44b9bbeabc9cf92bdce60b166b73a91fc836b2563a7213a306a3e69acaa9af8d627764eed2da4f0ef485c805f8740
   languageName: node
   linkType: hard
 
@@ -827,7 +827,7 @@ __metadata:
     "@types/node": ^18.13.0
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
-    "@xata.io/client": ^0.22.1
+    "@xata.io/client": ^0.23.3
     next: latest
     next-auth: ^4.19.2
     react: ^18.2.0
